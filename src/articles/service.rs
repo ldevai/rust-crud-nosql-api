@@ -4,8 +4,8 @@ use mongodb::{Database};
 
 use crate::Result;
 use crate::articles::models::{Article, Comment};
-use crate::error::{AppError};
 use crate::articles::utils::{parse_articles, parse_article, article_to_doc, comment_to_doc};
+use crate::error::{AppError};
 
 
 pub async fn get_articles(_db: Database) -> Result<Vec<Article>> {
