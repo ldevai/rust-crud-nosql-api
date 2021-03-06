@@ -1,4 +1,4 @@
-# Rust Crud Application using Warp and Mongo with JWT authentication
+# Rust Crud Application using Warp and NoSQL (Mongo) with JWT authentication
 
 This boilerplate application offers the following endpoints, with JWT role-based validation on most of them:
 
@@ -34,7 +34,7 @@ The **.env** file contains the mongodb connection details and encryption keys.
 
 Requirements: rust toolchain, docker, docker-container
 
-Create and start a mongodb container with docker:
+Create and start a mongodb instance with docker:
 
     docker-compose up -d db mongo-express
 
@@ -73,6 +73,8 @@ If everything is working, and you are using Linux/MacOS/Cygwin or have access to
 Querying the /users API without Admin role should result in an 401 Unauthorized error.
 
 #### Change user role to Admin on Mongo console and login again.
+
+
 
 <br />
 

@@ -1,4 +1,6 @@
 target/
-data/
-.idea
+Cargo.lock
+**/*.rs.bk
 *.iml
+.idea/
+data/
