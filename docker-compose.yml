@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: rust-crud-nosql-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    restart: always
+    environment:
+      COMPOSE_CONVERT_WINDOWS_PATHS: 1
+
+  db:
+    container_name: rust-crud-nosql-db
+    image: mongo:latest
+    user: 'root'
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo
+    restart: always
+
+  mongo-express:
+    container_name: rust-crud-nosql-mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: rust-crud-nosql-db
