@@ -33,6 +33,7 @@ pub fn article_to_doc(_article: &Article) -> mongodb::bson::document::Document {
         "tags": _article.tags.clone().unwrap(),
         "created_at": _article.created_at.clone().unwrap(),
         "updated_at": _article.updated_at.clone().unwrap(),
+        "comments": []
     }
 }
 
